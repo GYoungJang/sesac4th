@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: relative; 
+            animation-name: myanimation;
+            /*애니메이션 3번 반복  */
+            animation-iteration-count: infinite;
+            animation-duration: 0.5s;
+            animation-timing-function: ease-in-out;
+          
+        }
+        @keyframes myanimation {
+            0% {left:0px;}
+            25% {left:100px;}
+            50% {left:200px;}
+            75% {left:300px;}
+            100% {left:400px;}
+        }
+
+    </style>
+</head>
+<body>
+    <div></div>
+    
+</body>
+</html>
