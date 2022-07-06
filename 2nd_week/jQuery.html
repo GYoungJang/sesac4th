@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        function setValue(){
+            $("#input1").val("setting");
+        }
+        function getValue(){
+            alert($("#input1").val());
+        }
+        function changeStyle(){
+            // var span = document.querySelector("span");
+            // span.style = "font-size : 20px; color : red";
+            $("span").css("font-seze", "28px");
+            $("span").css("color", "orange");
+        }
+        function changeText() {
+            // var span = document.querySelector("span");
+            // span.innerText = "javascript!!!";
+            $("span").text("jQuery~!~!");
+        }
+        function changeAttribute() {
+            // var img = document.querySelector("img");
+            // img.width = "100";
+            $("img").attr("width", "100");
+        }
+        function changeHTML() {
+            // var p = document.querySelector("p");
+            //innerText로 하면 태그가 안 먹고 문자열로 보임 
+            // p.innerHTML = "<h1>dsadsadasd</h1>"
+            $("p").html("<h3>dasdd</h3>");
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="input1">
+    <button type="button" onclick="setValue();">setValue</button>
+    <button type="button" onclick="getValue();">getValue</button>
+    <br>
+    <span>안녕</span>
+    <img src="">
+    <button type="button" onclick="changeStyle();">changeStyle</button>
+    <button type="button" onclick="changeText();">changeText</button>
+    <button type="button" onclick="changeAttribute();">changeAttribute</button>
+    <P style="background-color: orange;">p태그</P>
+    <button type="button" onclick="changeHTML();">changeHTML</button>
+
+</body>
+</html>
+    

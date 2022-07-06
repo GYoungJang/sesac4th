@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../jquery-ui-1.13.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../jquery-ui-1.13.1.custom/jquery-ui.css">
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var i = 0;
+        function click_div() {
+            console.log(i);
+            let color = ["orange", "yellow", "green", "blue","darkblue", "purple", "red"];
+            $("div").css("background-color", color[i]);
+            i++;
+            if (i == color.length){
+                i = 0;
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="div" onclick=click_div()>
+
+    </div>
+    
+</body>
+</html>
+           
+            
+
+            
