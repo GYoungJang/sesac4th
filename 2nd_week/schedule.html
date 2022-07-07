@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="../jquery-ui-1.13.1.custom/jquery-ui.css">
     <style>
         .calendar {
-            padding:40px;
+            padding:20px;
             width: 600px;
             height: 600px;
-            border: 1px red solid;
             position: absolute; 
             top: 30px;
             left:500px;
@@ -21,33 +20,38 @@
             width: 100%;
             height: 100%;
             text-align: center;
+            cursor: pointer;
+            margin: auto;
         }
-        
-
+        td {
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
     <div>
-        날짜 : <input type="text"><br>
-        내용 : <input type="text"><br>
-        <input type="button" value="작성">
+        날짜 : <input id="day" type="text"><br>
+        내용 : <input id="content" type="text"><br>
+        <button id="upload" type="button" onclick="upload()">작성</button>
     </div>
-    
     <div class="calendar">
+        <div style="font-size: 30px; color: green; text-align: center;">
+            2022년 7월
+        </div>
+        <br>
         <table class="table">
-            <caption style="font-size: 30px; color: green;">2022년 7월</caption>
             <thead>
                 <tr>
-                    <th>일</th>
-                    <th>월</th>
-                    <th>화</th>
-                    <th>수</th>
-                    <th>목</th>
-                    <th>금</th>
-                    <th>토</th>
+                    <th style="color:red;">日</th>
+                    <th>月</th>
+                    <th>火</th>
+                    <th>水</th>
+                    <th>木</th>
+                    <th>金</th>
+                    <th style="color:blue;">土</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="clickNum">
                 <tr>
                     <td></td>
                     <td></td>
@@ -55,46 +59,46 @@
                     <td></td>
                     <td></td>
                     <td>1</td>
-                    <td>2</td>
+                    <td style="color:blue;">2</td>
                 </tr>
                 <tr>
-                    <td>3</td>
+                    <td style="color:red;">3</td>
                     <td>4</td>
                     <td>5</td>
                     <td>6</td>
                     <td>7</td>
                     <td>8</td>
-                    <td>9</td>
+                    <td style="color:blue;">9</td>
                 </tr>
                 <tr>
-                    <td>10</td>
+                    <td style="color:red;">10</td>
                     <td>11</td>
                     <td>12</td>
                     <td>13</td>
                     <td>14</td>
                     <td>15</td>
-                    <td>16</td>
+                    <td style="color:blue;">16</td>
                 </tr>
                 <tr>
-                    <td>17</td>
+                    <td style="color:red;">17</td>
                     <td>18</td>
                     <td>19</td>
                     <td>20</td>
                     <td>21</td>
                     <td>22</td>
-                    <td>23</td>
+                    <td style="color:blue;">23</td>
                 </tr>
                 <tr>
-                    <td>24</td>
+                    <td style="color:red;">24</td>
                     <td>25</td>
                     <td>26</td>
                     <td>27</td>
                     <td>28</td>
                     <td>29</td>
-                    <td>30</td>
+                    <td style="color:blue;">30</td>
                 </tr>
                 <tr>
-                    <td>31</td>
+                    <td style="color:red;">31</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -103,11 +107,48 @@
                     <td></td>
                 </tr>
             </tbody>
-
         </table>
-
-
-
     </div>
+    <script>
+        $(document).ready(function(){
+            $("td").hover(function(){
+                $(this).css("font-size", "25px");
+            }, function(){
+                $(this).css("font-size", "20px")
+            })
+        })
+
+        // $("#clickNum").click(function(){
+        //     var Num = $(this).val();
+        //     $("#date").val() = Num;
+        // })
+        
+        // function click() {
+        //     let day  = $("td").val();
+        //     $("#date").val() = day;
+        // }
+
+        let target;
+        $("td").on("click", function (obj) {
+            target = obj.currentTarget;
+            $("#day").val($(target).text());
+        });
+
+    
+        
+        function upload() {
+            let date = $("#date").val();
+            let content = $("#content").val();
+            let div = document.createElement("div"); //p태그는 왜,,?
+            div.innerText = content;
+            $(target).append(div);
+            
+        }
+
+    </script>
 </body>
 </html>
+    
+
+
+
