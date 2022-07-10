@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>최강 삼성 라이온즈</title>
+  <link rel="shortcut icon" href="삼성로고.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style>
+    .bg_img {
+      /* The image used */
+      background-image: url("삼성라이온즈_4연패.jpg");
+      min-height: 850px;
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* Needed to position the navbar */
+      position: relative;
+    }
+    .text_size{
+      font-size: 20px;
+    }
+    .nav-link :hover {
+      color: rgb(25, 55, 225);; 
+      background: #fff;
+    }
+</style>      
+</head>
+<body>
+  <div class="bg_img">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-11">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link bg-dark text-white" href="#">전체메뉴</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-1">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link d-lg-block d-md-none d-sm-none bg-black text-white" href="#">로그인</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-transparent navbar-fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="삼성라이온즈.jpeg" width="60" alt=""></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb mb-lg-0">
+                  <li class="nav-item text_size">
+                    <a class="nav-link active" aria-current="page" href="#"><b>구단</b></a>
+                  </li>
+                  <li class="nav-item text_size">
+                    <a class="nav-link active" href="#"><b>선수정보</b></a>
+                  </li>
+                  <li class="nav-item text_size">
+                    <a class="nav-link active" href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal"><b>GO! 라팍</b></a>
+                  </li>
+                  <li class="nav-item dropdown text_size">
+                    <a class="nav-link dropdown-toggle active " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <b>기타</b>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#"></a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">라팍 오시는 길</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.325816064272!2d128.67980145126063!3d35.84101358005987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3566095381548595%3A0x4a48e31222ad6c61!2z64yA6rWs7IK87ISx65287J207Jio7KaI7YyM7YGs!5e0!3m2!1sko!2skr!4v1657463800094!5m2!1sko!2skr"
+            width="480" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p style="text-align: center; margin: 28px;">
+      <img src="catchphrase.png" alt="one_team one_body">
+    </p>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="card" style="width: 30rem; height: 30rem;">
+        <img src="11년 우승.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">2011년 한국시리즈 우승</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card" style="width: 30rem; height: 30rem">
+        <img src="12년 우승.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">2012년 한국시리즈 우승</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card" style="width: 30rem; height: 30rem">
+        <img src="13년 우승.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">2013년 한국시리즈 우승</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <footer class="container-fluid navbar-fixed-bottom">
+      <p></p>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+  
+
+
+    
+
+
+
+
+
+    
+  
+
