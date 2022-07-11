@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>최강 삼성 라이온즈</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="삼성로고.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -16,7 +17,7 @@
       /* Center and scale the image nicely */
       background-position: center;
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: 2300px 1000px;
       /* Needed to position the navbar */
       position: relative;
     }
@@ -27,6 +28,13 @@
       color: rgb(25, 55, 225);; 
       background: #fff;
     }
+    .floatbox {
+      color: rgb(25, 55, 225);; 
+      background: transparent;
+    }
+    .floatbox > li :hover{
+      background-color: #fff;
+    }
 </style>      
 </head>
 <body>
@@ -36,9 +44,45 @@
         <div class="col-lg-11">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link bg-dark text-white" href="#">전체메뉴</a>
+              <a class="nav-link bg-dark text-white" id="menu" onclick="allmenu();" href="#">전체메뉴</a>
             </li>
           </ul>
+        </div>
+        <div class="all_menu" style="display: none;">
+          <div class="all_menu_list">
+            <ul class="floatbox">
+              <li>
+                <a href="#">구단</a>
+              </li>
+              <li>
+                <a href="#">선수정보</a>
+              </li>
+              <li>
+                <a href="exampleModal" data-bs-toggle="modal" data-bs-target="#exampleModal">GO! 라팍</a>
+              </li>
+              <li>
+                <a href="#">기타</a>
+                <ul>
+                  <li>
+                    <a href="#">기타1</a>
+                  </li>
+                  <li>
+                    <a href="#">기타2</a>
+                  </li>
+                  <li>
+                    <a href="#">기타3</a>
+                  </li>
+                  <li>
+                    <a href="#">기타4</a>
+                  </li>
+                  <li>
+                    <a href="#">기타5</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
         </div>
         <div class="col-lg-1">
           <ul class="nav">
@@ -72,8 +116,11 @@
                       <b>기타</b>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#"></a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">기타1</a></li>
+                      <li><a class="dropdown-item" href="#">기타2</a></li>
+                      <li><a class="dropdown-item" href="#">기타3</a></li>
+                      <li><a class="dropdown-item" href="#">기타4</a></li>
+                      <li><a class="dropdown-item" href="#">기타5</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -105,66 +152,189 @@
     </div>
   </div>
   <div>
-    <p style="text-align: center; margin: 28px;">
+    <p style="text-align: center; margin: 60px;">
       <img src="catchphrase.png" alt="one_team one_body">
     </p>
   </div>
-  <div class="row">
-    <div class="col-4">
-      <div class="card" style="width: 30rem; height: 30rem;">
-        <img src="11년 우승.jpeg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">2011년 한국시리즈 우승</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 30rem; height: 30rem">
-        <img src="12년 우승.jpeg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">2012년 한국시리즈 우승</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card" style="width: 30rem; height: 30rem">
-        <img src="13년 우승.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">2013년 한국시리즈 우승</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-  </div>
   <div>
-    <footer class="container-fluid navbar-fixed-bottom">
-      <p></p>
-    </footer>
+    <div class="row">
+      <div class="col-4" style="padding-left: 200px;">
+        <div class="card" style="width: 30rem; height: 30rem">
+          <img src="11년 우승.jpeg" class="card-img-top" height="300px" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">2011년 한국시리즈 우승</h5>
+            <p class="card-text">삼성 라이온즈가 2011년 통합우승을 달성하였다.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4" style="padding-left: 200px;">
+        <div class="card" style="width: 30rem; height: 30rem">
+          <img src="12년 우승.jpeg" class="card-img-top" height="300px" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">2012년 한국시리즈 우승</h5>
+            <p class="card-text">삼성 라이온즈가 2012년 통합우승 2연패를 달성하였다.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-4" style="padding-left: 200px;">
+        <div class="card" style="width: 30rem; height: 30rem">
+          <img src="13년 우승.jpg" class="card-img-top" height="300px" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">2013년 한국시리즈 우승</h5>
+            <p class="card-text">삼성 라이온즈가 2013년 통합우승 3연패를 달성하였다.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <div class="container-fluid bg-primary text-white text-center" style="margin-top:60px; margin-bottom:60px; padding: 10px; max-width: 2300px;">
+    <h1>Next Home Match</h1>
+    <br>
+    <p>
+      <span><img src="삼성라이온즈.jpeg" width="90px" height="80px" alt=""></span>
+      <span style="font-size: 50px; margin-left: 20px;"><b>vs</b></span>
+      <span><img src="lgt.png" width="120px" height="80px" alt=""></span>
+    </p> 
+  </div>
+  <!-- Footer -->
+  <footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    <!-- <section
+      class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+    > -->
+      <!-- Left -->
+      <!-- <div class="me-5 d-none d-lg-block">
+        <span>Get connected with us on social networks:</span>
+      </div> -->
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h5 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>삼성 라이온즈
+            </h5>
+            <!-- <p>
+              Here you can use rows and columns to organize your footer content. Lorem ipsum
+              dolor sit amet, consectetur adipisicing elit.
+            </p> -->
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              이용약관
+            </h6>
+            <p class="text-primary">
+              <a href="#!" class="text-reset" >개인정보처리방침</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">영상정보처리기기 운영관리방침</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">이메일무단수집거부</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              광고문의
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Site Map</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">언론사진자료실</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Contact
+            </h6>
+            <p><i class="fas fa-home me-3"></i> 대표이사: 원기찬</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              주소: 대구광역시 수성구 야구전설로 1 
+            </p>
+            <p><i class="fas fa-phone me-3"></i> 사업자번호: 504-81-03755</p>
+            <p><i class="fas fa-print me-3"></i> 전화번호: 053-780-3300</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2022 Copyright:
+      <a class="text-reset fw-bold" href="https://www.samsunglions.com/index.asp">SamsungLions.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+  <script>
+    function allmenu() {
+      if ($('.all_menu').css('display') == 'none') {
+        $('#menu').text('전체메뉴닫기');
+      } else {
+        $('#menu').text('전체메뉴');;
+      }
+      if ($('.all_menu').css('display') == 'none') {
+          $('.all_menu').css('display', 'inline');
+      } else {
+          $('.all_menu').css('display', 'none');
+      }
+    }
+
+            
+</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
 
-
-
-  
-
-
     
-
-
-
-
-
-    
-  
-
