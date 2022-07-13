@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0782d2f2-5a67-459b-a925-4ef2e7275ee1" name="zzbtang" url="http://118.67.128.65">
+        <fileTransfer rootFolder="/var/www/html" accessType="SFTP" host="118.67.128.65" port="22" sshConfigId="4992053c-abf1-4d4b-a752-6b85755fd61e" sshConfig="root@118.67.128.65:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
