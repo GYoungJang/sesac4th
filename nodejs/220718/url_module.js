@@ -3,7 +3,7 @@ const url = require('url');
 const {URL} = url;    // url 모듈 안의 URL클래스를 사용하기 위해 {URL} 해줌. 안 쓰면 url.URL 이렇게 써야함.
 
 const string = "https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=sesac&oquery=sesac&tqi=hWRsZlprvhGssvbiVWhssssssb4-092695";
-const naver = new URL(string); 
+const naver = new URL(string); // URL이 클래스라서 new 붙여준다....
 
 // console.log(url.format(naver));
 // console.log(url.parse(string));
@@ -36,3 +36,4 @@ for (const name of params2.keys()) {
 // console.log(naver.searchParams.values());
 // naver.searchParams.delete('sm');
 // console.log(naver.searchParams.keys());
+console.log(url);

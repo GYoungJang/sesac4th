@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+        .div1 {
+            left: 100px;
+        }
+        .div2 {
+            position: relative;
+            left: 100px;
+            background-color: yellow;
+        }
+        .div3 {
+            position: absolute;
+            left: 50px;
+            background-color: green;
+        }
+        .div4 {
+            position: fixed;
+            left: 50px;
+            top: 20px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2">
+        <div class="div3"></div>
+    </div>
+
+    
+</body>
+</html>
