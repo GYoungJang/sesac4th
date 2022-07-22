@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>EJS_worm</title>
+    </head>
+    <body>
+        <% for (let i = 0; i < 5; i++) { %>
+            <% if (i == 3) { %>
+                <h3>hi</h3>
+            <% } else { %>
+                <h1>hi</h1>
+            <% } %>
+        <% } %>
+        
+        <% for( let j = 0; j < list.length; j++ ) { %>
+            <h4><%=list[j]%></h4>
+        <% } %>
+
+        <% let a = 'hello'; %>
+        
+        <p><%=a%></p>
+    
+        <%- include('worm.ejs') %>
+        <%- include('test2.ejs') %>
+        
+    </body>
+</html>
+
+<html>
+
+</html>
