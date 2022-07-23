@@ -1,50 +1,123 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>worm</title>
-  <style>
-    .circle {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      border-radius: 50px;
-    }
-    .circle_smaller {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      border-radius: 20px;
-      top: 20px;
-      left: 20px;
-    }
-    .circle_smallest {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      border-radius: 10px;
-      top: 6px;
-      left: 0px;
-    }
-  </style>
-</head>
-<body>
-  <div class="circle" style="background-color: skyblue; top:50px; left: 100px;" >
-    <div class="circle_smaller" style="background-color: white" >
-      <div class="circle_smallest" style="background-color: black;"></div>
-    </div>
-    <div class="circle" style="background-color: powderblue; top: 40px; left: 75px;">
-      <div class="circle" style="background-color: cornflowerblue; top: 40px; left: 50px;">
-        <div class="circle" style="background-color: deepskyblue; left: 50px;">
-          <div class="circle" style="background-color: mediumseagreen; left: 60px; z-index: 20;"></div>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습4</title>
+    <style>
+      div#container {
+        width: 50%;
+        margin: 350px auto;
+      }
+      div#con1 {
+        width: 50%;
+        float: left;
+      }
+      div#con2 {
+        width: 50%;
+        float: right;
+      }
+      .first_circle {
+        background: #33c7f7;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: relative;
+      }
+      .second_circle {
+        background: #33c7f7;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: relative;
+      }
+      .first_1 {
+        background: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+      .first_2 {
+        background: #000;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+      }
+      .second_1 {
+        background: #2c439b;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50px;
+        left: 65px;
+      }
+      .second_2 {
+        background: #253f58;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        top: 40px;
+        left: 50px;
+      }
+      .second_3 {
+        background: #8ad5eb;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 60px;
+      }
+      .second_4 {
+        background: #8a54a2;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="con1">
+        <div class="first_circle">
+          <div class="first_1">
+            <div class="first_2"></div>
+          </div>
+          <div class="second_1">
+            <div class="second_2">
+              <div class="second_3">
+                <div class="second_4"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div id="con2">
+        <div class="second_circle">
+          <div class="first_1">
+            <div class="first_2"></div>
+          </div>
+          <div class="second_1">
+            <div class="second_2">
+              <div class="second_3">
+                <div class="second_4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <img src="./image/back_img.png" width="80%" height="130px" alt="">-->
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
-
-
-    
-
-    
