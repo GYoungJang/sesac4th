@@ -1,42 +1,57 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>worm</title>
     <style>
-        div {
-            background-color: red;
-            width: 100px;
-            height: 100px;
-            border-radius: 50px;
-        }
-        .div1 {
-            left: 100px;
-        }
-        .div2 {
-            position: relative;
-            left: 100px;
-            background-color: yellow;
-        }
-        .div3 {
-            position: absolute;
-            left: 50px;
-            background-color: green;
-        }
-        .div4 {
-            position: fixed;
-            left: 50px;
-            top: 20px;
-            background-color: black;
-        }
+      .circle {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+      }
+      .circle_smaller {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        top: 20px;
+        left: 20px;
+      }
+      .circle_smallest {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        top: 6px;
+        left: 0px;
+      }
     </style>
-</head>
-<body>
-    <div class="div1"></div>
-    <div class="div2">
-        <div class="div3"></div>
+  </head>
+  <body>
+    <div
+      class="circle"
+      style="background-color: skyblue; top: 50px; left: 100px"
+    >
+      <div class="circle_smaller" style="background-color: white">
+        <div class="circle_smallest" style="background-color: black"></div>
+      </div>
+      <div
+        class="circle"
+        style="background-color: powderblue; top: 40px; left: 75px"
+      >
+        <div
+          class="circle"
+          style="background-color: cornflowerblue; top: 40px; left: 50px"
+        >
+          <div class="circle" style="background-color: deepskyblue; left: 50px">
+            <div
+              class="circle"
+              style="background-color: mediumseagreen; left: 60px; z-index: 20"
+            ></div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    
-</body>
+  </body>
 </html>
