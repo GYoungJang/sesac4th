@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Index.ejs</title>
+    </head>
+
+    <body>
+        <form action="/receive" method="GET">
+            <fieldset>
+                <legend>이름 / 성별</legend>
+                <label>이름 : <input type="text" name="name" placeholder="이름" required autofocus></label>
+                <label for="gender"></label>
+                <input type="radio" name='gender' value="M">남
+                <input type="radio" name='gender' value="F">여
+            </fieldset>
+            <fieldset>
+
+                <input type="checkbox" name='sport' value="Football">축구
+                <input type="checkbox" name='sport' value="Baseball">야구
+                <input type="checkbox" name='sport' value="Basketball">농구<br>
+                <input type="date">
+                <input type="color">
+                <input type="number">
+                <input type="time">
+                <input type="password">
+                <input type="reset" value="취소">
+                <select name="year">
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                </select>
+            </fieldset>
+            <button>전송</button>
+        </form>
+    </body>
+</html>
+
+            

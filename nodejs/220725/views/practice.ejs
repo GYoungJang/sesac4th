@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+    <!-- <script>
+        function sendMail() {
+            var link = "mailto:me@example.com"
+            + "?cc=myCCaddress@example.com"
+            + "&subject=" + encodeURIComponent("This is my subject")
+            + "&body=" + encodeURIComponent(document.getElementById('myText').value);
+            window.location.href = link;
+        }
+    </script> -->
+</head>
+
+<body>
+    <form action="/prac_receive" method="POST">
+        폼 전송 - 실습<br>
+        <fieldset>
+            <legend>이름 / 성별</legend>
+            <label>이름 : <input type="text" name="name" placeholder="이름" required autofocus></label><br>
+            <label for="gender">성별
+                <input type="radio" name='gender' value="M" required>남
+                <input type="radio" name='gender' value="F" required>여
+            </label><br>
+        </fieldset><br>
+        <fieldset>
+            <legend>생년월일 / 관심사</legend>
+            <label for="birth">생년월일
+                <select name="year" id="birth">
+                    <%for(var i = 1950 ; i <=2022  ; i++) {%>
+                        <option value=<%=i%>>
+                            <%=i%>
+                        </option>
+                    <%}%>
+                </select>년
+                <select name="month" id="birth">  
+                    <%for(var i=1; i <= 12; i++) {%>       
+                        <option value=<%=i%>>
+                            <%=i%>
+                        </option>
+                    <%}%>
+                </select>월
+                <select name="day" id="birth">
+                    <%for(var i=1; i <= 31; i++) {%>       
+                        <option value=<%=i%>>
+                            <%=i%>
+                        </option>
+                    <%}%>
+                </select>일
+            </label><br>
+            <label for="interested">관심사
+                <input type="checkbox" name="inter" id="interested" value="travel">여행 
+                <input type="checkbox" name="inter" id="interested" value="fashion">패션 
+                <input type="checkbox" name="inter" id="interested" value="food">음식
+            </label><br>
+        </fieldset><br>
+
+
+
+        <input type="button" value="email 문의" onclick="alert('전송완료')">
+        <input type="submit" value="회원가입">
+        <input type="reset" value="취소하기">
+    </body>
+
+            
+
+
+</html>
+        
