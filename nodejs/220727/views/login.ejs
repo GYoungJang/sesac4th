@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>login</title>
+    <script>
+      function login() {
+        let login = document.getElementById('login_info');
+        let result = login.checkValidity();
+        if (!result) {
+            alert('이상해');
+            login.reportValidity();
+            return false;
+        }
+
+        axios({
+            method: 'post',
+            url:"http://localhost:8080/login_receive",
+            data: {
+                id: login.id.value,   // 서버로 전달?
+                pw: login.pw.value,  
+                
+            }
+        }).then((response) => {return response.data})
+        .then((data) => document.getElementById('info').innerHTML = data
+      )}
+    </script>
+  </head>
+  <body>
+    <form action="/login_receive" id='login_info' method="POST">
+      <fieldset>
+        <legend>로그인</legend>
+        <label for="id">
+          아이디 : <input type="text" name="id" id="id" required />
+        </label>
+        <br />
+        <label for="pw">
+          비밀번호 : <input type="password" name="pw" id="pw" required/>
+        </label>
+      </fieldset>
+      <br />
+      <div id="info">
+
+      </div>
+      <button type="button" onclick="login()">로그인</button>
+    </form>
+  </body>
+</html>

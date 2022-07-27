@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function sendGet(){
+            axios({
+                method: "get",
+                url: "http://localhost:8080/receive",
+                params: {
+                    name: 'codee'
+
+                }
+            }).then((response) => { return response.data;})
+            .then((data) => {alert(data.message)});
+        }
+        function sendPost(){
+            axios({
+                method: "post",
+                url: "http://localhost:8080/receive",
+                data: {
+                    name: 'codee'
+
+                }
+            }).then((response) => { return response.data;})
+            .then((data) => {alert(data.message)});
+        }
+        function sendForm() {
+            let form = document.getElementById('form_info');
+            console.log(form);
+
+            let result = form.checkValidity();
+            if (!result) {
+                alert('이상해');
+                form.reportValidity();
+                return false;
+            }
+            console.log(result);
+            // console.log(form.name.value)
+            // console.log(form.age.value)
+            // axios({
+            //     method: "post",
+            //     url: "http://localhost:8080/receive",
+            //     data: {
+            //         name: form.name.value <!-- input창의 값을 받아옴 -->
+
+            //     }
+            // }).then((response) => { return response.data;})
+            // .then((data) => {alert(data.message)});
+        }
+    </script>
+</head>
+<body> 
+    <form action="/receive">  <!-- 폼 안에서 버튼 타입에 따라 폼 전송이 될지 함수 실행이 될지 달라짐 -->
+        <button type="button" onclick="sendPost();">Post 버튼</button> 
+    </form>
+    <button onclick="sendGet();">sendGet</button>
+
+    <form id="form_info" action=""> <!-- 폼 태그의 아이디 지정-->
+        <input type="text" name="name" required>
+        <input type="text" name="age" required>
+        <button type="button" onclick="sendForm()">sendForm</button>
+    </form>
+</body>
+</html>
+    
