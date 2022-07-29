@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일 업로드</title>
+</head>
+<body> 
+    <form action="/upload" method="POST" enctype="multipart/form-data"> <!-- multer를 쓰려면 enctype 인코딩 타입 속성을 써줘야함.-->
+        <input type="file" name="userfile">
+        <button>업로드</button>
+    </form>
+    <br>
+    <form action="/upload/array" method="POST" enctype="multipart/form-data"> <!-- multer를 쓰려면 enctype 속성을 써줘야함.-->
+        <input type="file" name="userfile" multiple>
+        <button>업로드</button>
+    </form>
+    <br>
+    <form action="/upload/fields" method="POST" enctype="multipart/form-data"> <!-- multer를 쓰려면 enctype 속성을 써줘야함.-->
+        <input type="file" name="userfile">
+        <input type="file" name="userfile2">
+        <input type="file" name="userfile3">
+        <button>업로드</button>
+    </form>
+    
+</body>
+</html>
