@@ -32,15 +32,15 @@ exports.login = (req, res) => {
 
 exports.post_login = async (req, res) => {
     let data = await User.get_user();
-    let info = data;
-    let info1 = [[]* info.length];
+    let info = data.toString().split('\n');
     console.log(info);
+
+    //console.log(info[1].split('//'));
     // {'zzb', 'bbb', 'zzz', 13}
-    for (let i = 0; i < info.length; i++){
-        for (let j = 0; j < info.length; j++)
-            info1[i][j] += info[].split('//')
-    }
-    console.log(info1);;
+    // for (let i = 0; i < info.length; i++){
+        
+    // }
+    
     // if (info[0] !== req.body.id) {
     //     res.send('아이디 다름');
     // }

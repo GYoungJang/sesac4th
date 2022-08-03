@@ -10,5 +10,5 @@ exports.post_user = function (data) {
 exports.get_user = async function () {
 
     let buffer = await fs.readFile("./model/signup.txt");
-    return buffer.toString().split('\n');
+    return buffer.toString().split('//');
 }
