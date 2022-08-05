@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function writeComment () {
+        let form = document.getElementById("form_comment");
+        axios ({
+            method: 'post',
+            url: 'http://localhost:8000/visitor/write',
+            data: {
+                name: form.name.value,
+                comment: form.comment.value
+            }
+        })
+        .then((rep) => {return rep.data;})
+        .then((data) => {
+            // data = {id : 9}
+            let html = 
+            "<tr><td>" + data.id + "</td><td>" + form.name.value + "</td><td>" + form.comment.value + "</td></tr>";
+            $('table').append(html);
+        });
+
+    }
+</script>
+
+<body>
+    <form id='form_comment'>
+        <fieldset style="width: 300px">
+            <legend>방명록 등록</legend>
+            <div><input type="text" name="name" placeholder="사용자 이름"/></div>
+            <div><input type="text" name="comment"  placeholder="방명록"/></div>
+            <div id='button-group'>
+                <button type="button" onclick="writeComment();">등록</button>
+            </div>
+
+    </fieldset>
+    </form>
+
+    <table id = 'visitor_list' border="1" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>작성자</td>
+                <td>방명록</td>
+                <td>수정</td>
+                <td>삭제</td>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <% for (let i = 0; i < data.length; i++){%>
+                    
+                <tr>
+                    <td>
+                        <%=data[i].id%>
+                    </td>
+                    <td>
+                        <%=data[i].name%>
+                    </td>
+                    <td>
+                        <%=data[i].comment%>
+                    </td>          
+                </tr>
+            <%}%>
+            
+        </tbody>
+    </table>
+</body>
+</html>
+    
+    
+

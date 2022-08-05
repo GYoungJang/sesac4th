@@ -52,7 +52,7 @@ SELECT * FROM user ORDER BY ID DESC LIMIT 2;
 
 SELECT name, birthday FROM user; 
 
--- BETWEEN A ADN B
+-- BETWEEN A AND B
 
 SELECT * FROM player WHERE height BETWEEN 160 AND 180; -- 160 이상 180 이하. == AND
 -- IN
@@ -89,3 +89,10 @@ INSERT INTO user (id, pw, name, gender, birthday, age) VALUES ('hanjo', 'jk48fn4
 INSERT INTO user (id, pw, name, gender, birthday, age) VALUES ('widowmaker', '38ewifh3', '위도우', 'F', '1976-06-27', 47);
 INSERT INTO user (id, pw, name, gender, birthday, age) VALUES ('dvadva', 'k3f3ah', '송하나', 'F', '2001-06-03', 22);
 INSERT INTO user (id, pw, name, gender, birthday, age) VALUES ('jungkrat', '4ifha7f', '정크랫', 'M', '1999-11-11', 24);
+
+CREATE TABLE visitor (
+	id int not null primary key auto_increment,
+    name varchar(10) not null,
+    comment mediumtext null
+);
+INSERT INTO visitor (ID, name, comment) VALUES (1, '홍길동', '내가 왔다');
