@@ -4,14 +4,14 @@ const user = require('../controller/25day_controller'); // 컨트롤러 갖고�
 
 userRouter.get('/', user.get_root);
 userRouter.get('/home', user.get_home);
-userRouter.get('/signup', user.get_signup);
+// userRouter.get('/signup', user.get_signup);
 // userRouter.get('/login', user.get_login);
-userRouter.get('/register', user.register);
+userRouter.get('/signup', user.get_signup);
 // ~/register로 접속시 Usercontroller의 register함수를 실행
 
-userRouter.post('/register', user.post_register);
+userRouter.post('/signup', user.post_signup);
 
-userRouter.get('/login', user.login);
+userRouter.get('/login', user.get_login);
 userRouter.post('/login', user.post_login);
 
 

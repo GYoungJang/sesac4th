@@ -1,15 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
 //-----------------------------------
 exports.get_user = (req, res) => {
     req.send('Get User');
