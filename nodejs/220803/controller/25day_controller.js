@@ -30,7 +30,8 @@ exports.post_login = async (req, res) => {
         let id_pw = log_data[i].split('//',2);
         console.log(id_pw);
         if (id_pw[0] === id && id_pw[1] === pw) {
-            res.send('로그인 성공');
+            res.render('profile');
+            //res.send('로그인 성공');
             break;
         }
         if (i === (log_data.length)-1){

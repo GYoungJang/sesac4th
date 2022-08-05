@@ -6,7 +6,7 @@ exports.post_user = function (data) {
     // fs.writeFile('./model/signup.txt', `${data.id}//${data.pw}//${data.name}//${data.age}`);
     console.log(data);
     // if (data.id == )
-    fs.appendFile('./model/signup.txt', `${data.id}//${data.pw}//${data.name}//${data.age}\n`)
+    fs.appendFile('./model/signup.txt', `${data.id}//${data.pw}//${data.name}//${data.age}//${data.file}\n`)
 }
 
 exports.get_user = async function () {
