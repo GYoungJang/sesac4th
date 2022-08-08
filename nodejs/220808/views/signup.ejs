@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>회원가입</title>
+  </head>
+    <script>
+      function signup() {
+        let form = document.getElementById('form_signup');
+        axios({
+          method: 'post',
+          url: 'http://localhost:8080/signup/post',
+          data: {
+            id : form.id.value,
+            pw : form.pw.value,
+            name : form.name.value,
+            gender : form.gender.value,
+            birthday : form.birthday.value,
+            age : form.age.value,
+          }
+        })
+        document.location.href = "http://localhost:8080/login/get";
+        // .then((res) =>  {return res})
+        // .then((data) => {console.log(data);})
+      }
+    </script>
+  <body>
+    <form id="form_signup">
+      <fieldset style="width: 350px">
+        <legend>개인정보</legend>
+        아이디 : <input type="text" name="id" /><br />
+        비밀번호 : <input type="password" name="pw" /><br />
+        이름 : <input type="text" name="name" /><br />
+        성별 : <input type="text" name="gender" /><br>
+        생일 : <input type="text" name="birthday" /><br>
+        나이 : <input type="text" name="age" /><br />
+      </fieldset>
+      <button type="button" onclick="signup();">회원가입</button>
+    </form>
+  </body>
+</html>

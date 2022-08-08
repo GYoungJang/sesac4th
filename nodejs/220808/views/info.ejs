@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>회원정보</title>
+</head>
+<body>
+    <table id = 'info_list' border="1" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>PW</td>
+                <td>이름</td>
+                <td>성별</td>
+                <td>생일</td>
+                <td>나이</td>
+                <td>수정</td>
+                <td>삭제</td>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <% for (let i = 0; i < data.length; i++){%>
+                    
+                <tr id="tr_<%=data[i].id%>">
+                    <td><%=data[i].id%></td>
+                    <td><%=data[i].pw%></td>
+                    <td><%=data[i].name%></td>
+                    <td><%=data[i].gender%></td>
+                    <td><%=data[i].birthday%></td>
+                    <td><%=data[i].age%></td>
+                    <td><button type="button" onclick="editComment('<%=data[i].id%>');">수정</button></td>          
+                    <td><button type="button" onclick="deleteComment('<%=data[i].id%>');">삭제</button></td>          
+                </tr>
+            <%}%>
+            
+        </tbody>
+    </table>
+    
+</body>
+</html>
