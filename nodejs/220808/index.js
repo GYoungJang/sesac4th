@@ -17,4 +17,4 @@ app.use('/', router);
 
 app.listen(port, () => {
     console.log("서버연결 : ", port);
-})
+});

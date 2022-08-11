@@ -4,31 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <title>로그인</title>
   </head>
   <script>
-    // function login() {
-    //   let form = document.getElementById('form_login');
-    //   axios = ({
-    //     method: 'post',
-    //     url: 'http://localhost:8080/login/post',
-    //     data: {
-    //       id: form.id.value,
-    //       pw: form.pw.value,
-    //     }
-    //   })
-    //   document.location.href = "http://localhost:8080/patch"
-    // }
+    function login() {
+      let form = document.getElementById('form_login');
+      axios({
+        method: 'post',
+        url: 'http://localhost:8080/login/post',
+        data: {
+          id: form.id.value,
+          pw: form.pw.value,
+        },
+      })
+        .then((rep) => {
+          return rep.data;
+        })
+        .then((data) => {
+          if (data) {
+            alert('로그인 성공');
+            form.submit();
+            //document.location.href = 'http://localhost:8080/userInfo';
+          } else alert('로그인 실패');
+        });
+    }
   </script>
   <body>
-    <form action='/login/post' id="form_login">
+    <form action="/userinfo" method="post" id="form_login">
       <fieldset style="width: 300px">
         <legend>로그인</legend>
         아이디 : <input type="text" name="id" /><br />
         비밀번호 : <input type="password" name="pw" /><br />
       </fieldset>
-      <input type="submit" value="로그인"></button>
+      <button type="button" onclick="login();">로그인</button>
     </form>
   </body>
 </html>
