@@ -44,8 +44,8 @@ exports.post_userinfo = (req, res) => {
   models.User.findOne({
     where:{id: req.body.id}
   }).then((result) => {
-    console.log('a : ', result.dataValues)
-    res.render('info.ejs',{data: [result.dataValues]});
+    console.log('a : ', result)
+    res.render('info.ejs',{data: result});
   })
 }
 // exports.post_userinfo = (req, res) => {
@@ -58,7 +58,7 @@ exports.post_userinfo = (req, res) => {
 // }
 
 exports.patch_userinfo = (req, res) => {
-  console.log('adsa :', req.body);
+  console.log('req.body :', req.body);
   let info = {
     id : req.body.id,
     pw : req.body.pw,

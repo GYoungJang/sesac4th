@@ -59,6 +59,7 @@
             // $( "#tr_" + id ).remove();
           });
       }
+      console.log( "<%=data.id%>" );
     </script>
     <!-- <script>
       function editInfo(id) {
@@ -104,15 +105,14 @@
         </tr>
       </thead>
       <tbody id="info_list">
-        <!-- <% for (let i = 0; i < data.length; i++){%> -->
-        <tr id="tr_<%=data[0].id%>">
+        <tr>
           <td>
             <input
               id="ID"
               class="card__input"
               type="text"
               name="id"
-              value="<%=data[0].id%>"
+              value="<%=data.id%>"
             />
           </td>
           <td>
@@ -121,7 +121,7 @@
               class="card__input"
               type="text"
               name="pw"
-              value="<%=data[0].pw%>"
+              value="<%=data.pw%>"
             />
           </td>
           <td>
@@ -130,7 +130,7 @@
               class="card__input"
               type="text"
               name="name"
-              value="<%=data[0].name%>"
+              value="<%=data.name%>"
             />
           </td>
           <td>
@@ -139,7 +139,7 @@
               class="card__input"
               type="text"
               name="gender"
-              value="<%=data[0].gender%>"
+              value="<%=data.gender%>"
             />
           </td>
           <td>
@@ -148,7 +148,7 @@
               class="card__input"
               type="date"
               name="birthday"
-              value="<%=data[0].birthday%>"
+              value="<%=data.birthday%>"
             />
           </td>
           <td>
@@ -157,21 +157,20 @@
               class="card__input"
               type="number"
               name="age"
-              value="<%=data[0].age%>"
+              value="<%=data.age%>"
             />
           </td>
           <td>
-            <button type="button" onclick="editInfo('<%=data[0].id%>');">
+            <button type="button" onclick="editInfo('<%=data.id%>');">
               수정
             </button>
           </td>
           <td>
-            <button type="button" onclick="deleteInfo('<%=data[0].id%>');">
+            <button type="button" onclick="deleteInfo('<%=data.id%>');">
               삭제
             </button>
           </td>
         </tr>
-        <%}%>
       </tbody>
     </table>
   </body>
