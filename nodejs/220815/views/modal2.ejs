@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <title>modal</title>
+    <style>
+      .modal {
+        position: fixed;
+        top: 100px;
+        left: 100px;
+        right: 100px;
+        width: 300px;
+        background-color: green;
+        border-radius: 12px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="modal">
+      <p class="info">인터넷 익스플로러(IE) 서비스 지원이 종료됐음.</p>
+      <input type="checkbox" id="oneday" />
+      <label for="oneday">오늘 그만 보기</label>
+      <button class="button" onclick="del()">닫기</button>
+    </div>
+    <script>
+      jQuery(document).ready(function () {
+        $('.modal').show();
+      });
+      $('.button').click(function () {
+        $('.modal').hide();
+      });
+      let modal = document.querySelector('.modal');
+
+      let cookieName1 = document.cookie.split(';');
+      let cookieName2 = cookieName1[0].split('=');
+      let cookieName3 = cookieName2[0];
+
+      function del() {
+        let date = new Date().getDate() - 1;
+        let newCookie = `${cookieName1}; + Expires=${date}`;
+
+        document.cookie = newCookie;
+      }
+
+      function check(name) {
+        let visit = false;
+
+        if (name) visit = true;
+        if (visit) modal.style.display = 'none';
+        else modal.style.display = 'block';
+        console.log(visit);
+      }
+    </script>
+  </body>
+</html>

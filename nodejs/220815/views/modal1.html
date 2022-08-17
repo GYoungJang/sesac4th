@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .modal {
+        position: fixed;
+        top: 100px;
+        left: 100px;
+        right: 100px;
+        width: 300px;
+        background-color: green;
+        border-radius: 12px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="modal">
+      <p class="info">인터넷 익스플로러(IE) 서비스 지원이 종료됐음.</p>
+      <input type="checkbox" id="checkbox" />
+      <label for="checkbox">오늘 그만 보기</label>
+      <button class="close">닫기</button>
+    </div>
+
+    <script>
+      let modal = document.querySelector('.modal');
+      let checkbox = document.querySelector('#checkbox');
+      let close = document.querySelector('.close');
+
+      // 쿠키생성
+      function setCookie(name, value, day) {
+        let date = new Date(Date.now() + 86400e3);
+        date = date.toUTCString;
+
+        let myCookie = '';
+        myCookie += name + '=' + value + ';';
+        myCookie += 'expires=' + date;
+        document.cookie = myCookie;
+        console.log(document.cookie);
+      }
+
+      // 쿠키삭제
+
+      function delCookie(name, value) {
+        let date = new Date();
+        date.setDate(date.getDate() - 1);
+
+        let myCookie = '';
+        myCookie += name + '=' + value + ';';
+        myCookie += 'expires=' + date;
+        document.cookie = myCookie;
+      }
+
+      // 쿠키확인
+
+      function checkCookie(name) {
+        let cookies = document.cookie.split(';');
+        let visit = false;
+
+        for (let i in cookies) {
+          if (cookies[i].indexOf(name) > -1) {
+            visit = true;
+            console.log(true);
+          }
+        }
+        if (visit) modal.style.display = 'none';
+        else modal.style.display = 'block';
+      }
+
+      checkCookie('popUP');
+
+      close.addEventListener('click', function () {
+        if (checkbox.checked) {
+          setCookie('popUP', '1234', 1);
+          modal.style.display = 'none';
+        } else {
+          modal.style.display = 'none';
+          delCookie('popUP', '1234');
+        }
+      });
+    </script>
+  </body>
+</html>
