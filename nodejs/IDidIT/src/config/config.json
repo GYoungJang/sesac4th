@@ -1,0 +1,16 @@
+{
+  "development" :{
+    "host" : "localhost",
+    "database" : "IDI",
+    "username" : "user",
+    "password" : "Ebxnfl12!",
+    "dialect" : "mysql"
+  },
+  "production" : {
+    
+
+  },
+  "test" : {
+
+  }
+}

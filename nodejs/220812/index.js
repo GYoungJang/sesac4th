@@ -1,18 +1,18 @@
 const express = require('express');
 const app = express();
-const cookieParser = require('cookie-parser');
-// const session = require('express-session');
+// const cookieParser = require('cookie-parser');
+const session = require('express-session');
 const port = 8080;
 
 app.set('view engine', 'ejs');
 
 
-app.use(cookieParser('3458')); // 1234 키를 이용해서 쿠키를 만듦
-// app.use(session({
-//     secret : 'secret key',
-//     resave : false, // 변경이 되었을 때 세션을 덮어쓸지 말지 결정
-//     saveUninitialized : true, // 초깃값 설정하지 않아도 미리 세션을 만들어 놓는다...
-// }))
+// app.use(cookieParser('3458')); // 1234 키를 이용해서 쿠키를 만듦
+app.use(session({
+    secret : 'secret key',
+    resave : false, // 변경이 되었을 때 세션을 덮어쓸지 말지 결정
+    saveUninitialized : true, // 초깃값 설정하지 않아도 미리 세션을 만들어 놓는다...
+}))
 
 const cookieConfig = {
     maxAge: 50000,
@@ -22,30 +22,30 @@ const cookieConfig = {
 };
 
 app.get('/', (req, res) => {
-    // req.session.name = '홍길동';
-    // console.log(req.session);
-    res.cookie('key', 'value', cookieConfig);
-    res.cookie('key2', 'value2', cookieConfig);
+    req.session.name = '홍길동';
+    console.log(req.session);
+    // res.cookie('key', 'value', cookieConfig);
+    // res.cookie('key2', 'value2', cookieConfig);
     res.render('index');
 });
 
 app.get('/get', (req, res) => {
-    // console.log(req.session.name);`
-    console.log(req.cookies);
-    res.send(req.cookies);
+    console.log(req.session.name);
+    // console.log(req.cookies);
+    res.send(req.session.name);
 });
 
 app.get('/cookie', (req, res) => {
     res.render("cookie.ejs");
 })
 
-// app.get('/destroy', (req, res) => {
-//     // req.session.destroy(function(err){
-//     //     res.send('삭제');
-//     // })
-//     req.session.name = "";
-//     res.send('123');
-// })
+app.get('/destroy', (req, res) => {
+    // req.session.destroy(function(err){
+    //     res.send('삭제');
+    // })
+    req.session.name = " ";
+    res.send('123');
+})
 
 
 app.listen(port, () => {
