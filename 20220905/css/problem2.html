@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>반응형 웹 실습2</title>
+
+    <!-- Bootstrap Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+
+    <!-- Nomalization.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./problem.css" />
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header>
+      <div class="inner">
+        <div class="header-container">
+          <h1>LOGO</h1>
+          <a href="#" class="icon_menu"><i class="bi bi-list"></i></a>
+          <nav class="list_menu">
+            <a href="#">메뉴1</a>
+            <a href="#">메뉴2</a>
+            <a href="#">메뉴3</a>
+            <a href="#">메뉴4</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- 슬라이드 메뉴 -->
+    <nav class="slide_menu d-none">
+      <div class="inner">
+        <div class="slide_menu_container">
+          <a href="#">메뉴1</a>
+          <a href="#">메뉴2</a>
+          <a href="#">메뉴3</a>
+          <a href="#">메뉴4</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 메인 -->
+    <main>
+      <section class="problem_section">
+        <div class="inner">
+          <h1>실습1</h1>
+          <p>반응형 헤더를 만들어보자!</p>
+          <ol>
+            <li>1. 너비가 992px 이상일 때, 카드는 5개씩 정렬된다.</li>
+            <li>2. 카드의 margin은 8px값을 갖는다.</li>
+            <li>3. 너비가 992px 미만일 때, 카드는 2개씩 정렬된다.</li>
+            <li>
+              4. 너비가 992px 미만일 때, 카드의 설명 부분은 나타나지 않는다.
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section class="content_section">
+        <div class="inner">
+          <h2>Artist</h2>
+
+          <ul class="card_list">
+            <li class="card_wrapper">
+              <div class="card_item">
+                <img
+                  src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/002/61/143/261143_20210325180240_500.jpg?61e575e8653e5920470a38d1482d7312/melon/resize/416/quality/80/optimize"
+                  alt=""
+                />
+                <div>
+                  <span class="tit">아이유</span>
+                  <p class="desc">
+                    '아이유(IU)'라는 예명은 'I'와 'You'를 합친 합성어로 '너와
+                    내가 음악으로 하나가 된다.'라는 의미이다.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="card_wrapper">
+              <div class="card_item">
+                <img
+                  src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/002/61/143/261143_20210325180240_500.jpg?61e575e8653e5920470a38d1482d7312/melon/resize/416/quality/80/optimize"
+                  alt=""
+                />
+                <div>
+                  <span class="tit">아이유</span>
+                  <p class="desc">
+                    '아이유(IU)'라는 예명은 'I'와 'You'를 합친 합성어로 '너와
+                    내가 음악으로 하나가 된다.'라는 의미이다.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="card_wrapper">
+              <div class="card_item">
+                <img
+                  src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/002/61/143/261143_20210325180240_500.jpg?61e575e8653e5920470a38d1482d7312/melon/resize/416/quality/80/optimize"
+                  alt=""
+                />
+                <div>
+                  <span class="tit">아이유</span>
+                  <p class="desc">
+                    '아이유(IU)'라는 예명은 'I'와 'You'를 합친 합성어로 '너와
+                    내가 음악으로 하나가 된다.'라는 의미이다.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="card_wrapper">
+              <div class="card_item">
+                <img
+                  src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/002/61/143/261143_20210325180240_500.jpg?61e575e8653e5920470a38d1482d7312/melon/resize/416/quality/80/optimize"
+                  alt=""
+                />
+                <div>
+                  <span class="tit">아이유</span>
+                  <p class="desc">
+                    '아이유(IU)'라는 예명은 'I'와 'You'를 합친 합성어로 '너와
+                    내가 음악으로 하나가 된다.'라는 의미이다.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="card_wrapper">
+              <div class="card_item">
+                <img
+                  src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/002/61/143/261143_20210325180240_500.jpg?61e575e8653e5920470a38d1482d7312/melon/resize/416/quality/80/optimize"
+                  alt=""
+                />
+                <div>
+                  <span class="tit">아이유</span>
+                  <p class="desc">
+                    '아이유(IU)'라는 예명은 'I'와 'You'를 합친 합성어로 '너와
+                    내가 음악으로 하나가 된다.'라는 의미이다.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="card_wrapper">
+              <div class="card_item">
+                <img
+                  src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/002/61/143/261143_20210325180240_500.jpg?61e575e8653e5920470a38d1482d7312/melon/resize/416/quality/80/optimize"
+                  alt=""
+                />
+                <div>
+                  <span class="tit">아이유</span>
+                  <p class="desc">
+                    '아이유(IU)'라는 예명은 'I'와 'You'를 합친 합성어로 '너와
+                    내가 음악으로 하나가 된다.'라는 의미이다.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="card_wrapper">
+              <div class="card_item">
+                <img
+                  src="https://cdnimg.melon.co.kr/cm2/artistcrop/images/002/61/143/261143_20210325180240_500.jpg?61e575e8653e5920470a38d1482d7312/melon/resize/416/quality/80/optimize"
+                  alt=""
+                />
+                <div>
+                  <span class="tit">아이유</span>
+                  <p class="desc">
+                    '아이유(IU)'라는 예명은 'I'와 'You'를 합친 합성어로 '너와
+                    내가 음악으로 하나가 된다.'라는 의미이다.
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <script src="./problem.js"></script>
+  </body>
+</html>
