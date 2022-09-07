@@ -1,0 +1,66 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <style>
+        .chat_list {background-color: skyblue; width: 50%; height: 50%; padding: 10px;}
+        .chat_list div div {display: inline-block; padding: 3px;}
+        .my_chat div {background-color: yellow;}
+        .other_chat div {background-color: green;}
+        .my_chat {text-align:right};
+    </style>
+</head>
+<body>
+    <div id="chat_list" class="chat_list"></div>
+    <input type="text" id="message">
+    <button type="button" onclick="send();">전송</button>
+
+    <script>
+        var id = '';
+        const socket = io.connect();
+        socket.on('info', function(data) {
+            if ( id == "" ) id = data;
+            let chat_list = document.getElementById('chat_list');
+            let div = document.createElement("div");
+            // let div_chat = document.createElement('div');
+
+            // div_chat.textContent = `${data}님이 입장하셨습니다.` ;
+            div.textContent = `${data}님이 입장하셨습니다.` ;
+            // div.appendChild(div_chat);
+            chat_list.appendChild(div);
+        });
+        // on : 연결을 받겠다 connect : 이벤트 이름
+        socket.on('connect', function() {
+            console.log('server connected');
+        })
+        function send() {
+            let msg = document.getElementById('message').value;
+            if ( msg == "" ) return;
+            socket.emit('send', {id: id, msg: msg});
+            document.getElementById('message').value = '';
+        };
+        
+        socket.on('newMsg', function(data) {
+            console.log('message : ', data.msg);
+            let chat_list = document.getElementById('chat_list');
+            let div = document.createElement("div");
+            let div_chat = document.createElement('div');
+
+            div_chat.textContent = data.msg;
+            console.log( " id : ", id );
+            console.log( "data.id : ", data.id );
+            // if(msg === document.getElementById('message').value) {div.classList.add("my_chat")}
+            if(data.id == id) {div.classList.add("my_chat")}
+            else {div.classList.add('other_chat');}
+
+        
+            div.appendChild(div_chat);
+            chat_list.appendChild(div);
+        })
+    </script>
+   
+</body>
+</html>
+
