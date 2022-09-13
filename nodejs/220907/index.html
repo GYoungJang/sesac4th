@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        HELLO WORLD!
-        <p id="p"></p>
+      HELLO WORLD!
+      <p id="p"></p>
     </div>
-    <div>
-       input
-    </div>
+    <div>input</div>
 
     <button type="button" onclick="btnClick();">클릭</button>
     <button type="button" onclick="btnClick1();">클릭1</button>
     <button type="button" onclick="btnClick2();">클릭2</button>
     <script>
-        const socket = io.connect();
+      // io 클라이언트를 만들면서 서버에 접속 시도
+      const socket = io.connect();
 
-        // on : 연결을 받겠다 connect : 이벤트 이름
-        socket.on('connect', function() {
-            console.log('server connected');
-        })
+      // on : 연결을 받겠다 connect : 이벤트 이름
+      socket.on('connect', function () {
+        console.log('server connected');
+      });
 
-        socket.on('hello', function(data) {
-            console.log('data : ', data);
-        });
+      socket.on('hello', function (data) {
+        console.log('data : ', data);
+      });
 
-        function btnClick() {
-            socket.emit('click', 'Click!!');
-        };
-        function btnClick1() {
-            socket.emit('click1', 'Click!!');
-        };
-        function btnClick2() {
-            socket.emit('click2', 'Click!!');
-        };
-        socket.on('clickResponse', function(data) {
-            console.log('client : ', data);
-            let content = document.getElementById('p');
-            content.innerText = data;
+      function btnClick() {
+        socket.emit('click', 'Click!!');
+      }
+      function btnClick1() {
+        socket.emit('click1', 'Click!!');
+      }
+      function btnClick2() {
+        socket.emit('click2', 'Click!!');
+      }
+      socket.on('clickResponse', function (data) {
+        console.log('client : ', data);
+        let content = document.getElementById('p');
+        content.innerText = data;
 
-            console.log(socket.id);
-        })
+        console.log(socket.id);
+      });
     </script>
-   
-</body>
+  </body>
 </html>
