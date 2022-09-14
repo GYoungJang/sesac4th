@@ -18,10 +18,12 @@
     <button type="button" onclick="send();">전송</button>
 
     <script>
-        var id = '';
+        var nickname = prompt('닉네임을 입력해주세요.');
+        // var id = '';
         const socket = io.connect();
+        socket.emit('info2', {nickname : nickname});
         socket.on('info', function(data) {
-            if ( id == "" ) id = data;
+            // if ( id == "" ) id = data;
             let chat_list = document.getElementById('chat_list');
             let div = document.createElement("div");
             // let div_chat = document.createElement('div');
@@ -38,7 +40,7 @@
         function send() {
             let msg = document.getElementById('message').value;
             if ( msg == "" ) return;
-            socket.emit('send', {id: id, msg: msg});
+            socket.emit('send', {msg: msg});
             document.getElementById('message').value = '';
         };
         
@@ -47,19 +49,24 @@
             let chat_list = document.getElementById('chat_list');
             let div = document.createElement("div");
             let div_chat = document.createElement('div');
+            let span = document.createElement('span');
 
             div_chat.textContent = data.msg;
-            console.log( " id : ", id );
-            console.log( "data.id : ", data.id );
-            // if(msg === document.getElementById('message').value) {div.classList.add("my_chat")}
-            if(data.id == id) {div.classList.add("my_chat")}
-            else {div.classList.add('other_chat');}
 
-        
-            div.appendChild(div_chat);
-            chat_list.appendChild(div);
-        })
-    </script>
+            // console.log( " id : ", id );
+            // console.log( "data.id : ", data.id );
+            // if(msg === document.getElementById('message').value) {div.classList.add("my_chat")}
+            // if(data.id == id) {div.classList.add("my_chat")}
+            if(data.nickname == nickname) {div.classList.add("my_chat")}
+            else {
+                span.textContent = data.nickname;
+                div.classList.add('other_chat');}
+                div.appendChild(div_chat);
+                chat_list.appendChild(div);
+            })
+        </script>
+            
+
    
 </body>
 </html>

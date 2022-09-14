@@ -9,12 +9,18 @@ app.get('/', function(req, res){
 });
 
 // on == read, emit //보내는 것.. hello라는 이벤트 명 뒤에가 데이터
+var list = {};
 io.on('connection', function(socket) {
     console.log('connected : ', socket.id);
-    io.emit('info', socket.id);
+    socket.on('info2', function(data) {
+        list[socket.id] = data.nickname;
+        io.emit('notice', data.nickname + "님이 입장하셨습니다.")
+    });
+    // io.emit('info', socket.id);
     socket.on('send', function(data) {
         console.log('msg : ', data.msg);
         // socket.emit('clickResponse', 'hello');
+        data['nickname'] = list[socket.id];
         io.emit('newMsg', data);
     });
     socket.on('disconnect', function() {
