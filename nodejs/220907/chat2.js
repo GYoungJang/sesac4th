@@ -17,8 +17,14 @@ io.on("connection", function(socket){
     socket.on("info2", function(data){
         list[socket.id] = data.nickname;
         io.emit("notice", data.nickname + "님이 입장하셨습니다.");
-        io.emit('list', list);
+        socket.broadcast.emit('list', list);
+        console.log('l',list);
+        //socket.emit('nickList', list);
+        //io.emit('list', list);
     });
+
+    //io.emit('nickList', list);
+    
     // socket.emit("info", socket.id);
     socket.on("send", function(data){
         console.log( "client message : ", data.msg );
@@ -42,6 +48,7 @@ io.on("connection", function(socket){
         delete list[socket.id];
     });
 });
+
 
 http.listen( 8000, function(){
     console.log( "Server port : ", 8000 );

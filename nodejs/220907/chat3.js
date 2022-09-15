@@ -6,7 +6,7 @@ var io = require("socket.io")(http);
 
 app.get("/", function(req,res){
     console.log("client");
-    res.sendFile( __dirname + "/chat.html" );
+    res.sendFile( __dirname + "/chat3.html" );
 });
 
 // io -> 클라이언트와의 모든 연결을 갖고 있는 친구
