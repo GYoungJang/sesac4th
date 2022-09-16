@@ -1,0 +1,27 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>namespace</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js "></script>
+</head>
+<body>
+    <button onclick="namespace(korea)">전국</button>
+    <button onclick='namespace(seoul)'>서울</button>
+    <button onclick='namespace(busan)'>부산</button>
+    <script>
+      const socket = io.connect();
+      
+      function namespace(nsp) {
+        const namespace = io(`/${nsp}`);
+        // news라는 이벤트를 받을 시 콘솔에 data.hello를 출력
+        namespace.on('welcome', (data) => {
+        console.log(data.hello);
+        });
+      }
+    
+    </script>
+</body>
+</html>
+    
