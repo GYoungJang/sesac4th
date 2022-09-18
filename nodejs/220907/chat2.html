@@ -31,23 +31,23 @@
     </select>
     <input type="text" id="message" />
     <button type="button" onclick="send();">전송</button>
-    <button onclick='namespace(1)'>namespace1</button>
-    <button onclick='namespace(2)'>namespace2</button>
+    <button onclick="namespace(1)">namespace1</button>
+    <button onclick="namespace(2)">namespace2</button>
     <script>
       const nickname = prompt('닉네임을 입력해주세요.');
       const socket = io.connect();
       // socket.on("info", function(data){ console.log( data ); id = data;});
-      
+
       socket.on('connect', function () {
         console.log('server connected');
       });
-      
+
       socket.emit('info2', { nickname: nickname });
-      
+
       // 닉네임 추가
       socket.on('list', function (list) {
         const nick_list = document.getElementById('nick_list');
-        
+
         //option.text = Object.values(list).pop();
         //option.text = Object.values(list).indexOf()
         //nick_list.appendChild(option);
@@ -60,23 +60,22 @@
         //console.log(existingNick);
         //console.log(existingNick[0].innerHTML);
 
-        while(nick_list.firstChild) {nick_list.removeChild(nick_list.lastChild);}
+        while (nick_list.firstChild) {
+          nick_list.removeChild(nick_list.lastChild);
+        }
         let option = document.createElement('option');
         option.text = '전체';
         option.value = '전체';
         nick_list.appendChild(option);
-        
 
         // option.value = Object.values(list)[list.length - 1];
         for (let [key, value] of Object.entries(list)) {
-            let option = document.createElement('option');
-            option.text = value;
-            option.value = value;
-            nick_list.appendChild(option);
+          let option = document.createElement('option');
+          option.text = value;
+          option.value = value;
+          nick_list.appendChild(option);
         }
       });
-
-       
 
       // var a = {
       //     key1 : '1',
@@ -134,9 +133,9 @@
 
       function namespace(num) {
         const namespace = io('/namespace' + num);
-          // news라는 이벤트를 받을 시 콘솔에 data.hello를 출력
+        // news라는 이벤트를 받을 시 콘솔에 data.hello를 출력
         namespace.on('news', (data) => {
-        console.log(data.hello);
+          console.log(data.hello);
         });
       }
     </script>
