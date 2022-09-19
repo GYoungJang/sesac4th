@@ -26,8 +26,17 @@
 .display-container {
   background: #b2c7d9;
   flex: 12;
-  overflow-y: scroll;
+  overflow-y: overlay;
 }
+.display-container::-webkit-scrollbar {
+  width: 1vw;
+}
+.display-container::-webkit-scrollbar-thumb {
+  background-color: hsla(0, 0%, 42%, 0.49);
+  border-radius: 100px;
+}
+
+
 .input-container {
   flex: 1;
   display: flex;
@@ -81,13 +90,13 @@
 .message {
   border-radius: 5px;
   padding: 0.5rem;
-  font-size: 12px;
+  font-size: 15px;
   margin: 0 5px;
-  flex: 7;
+  display: inline-block;
 }
 .time {
   font-size: 12px;
-  padding: 0.5rem;
+  padding: 0px;
   margin: 0 5px;
 } 
 .sent {

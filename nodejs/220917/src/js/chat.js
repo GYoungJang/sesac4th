@@ -8,28 +8,27 @@ const chatInput = document.querySelector('.chatting-input');
 const sendButton = document.querySelector('.send-button');
 const displayContainer = document.querySelector('.display-container');
 
-chatInput.addEventListener('keypress', (e) => {
+chatInput.addEventListener('keydown', (e) => {
   let key =  e.key || e.keyCode;
   if((key === 'Enter' && !e.shiftKey)||(key === 13 && key !== 16)){
+    if (chatInput.value == '') { e.preventDefault(); return;}
     send();
-    chatInput.value = '';
+    e.preventDefault();
   }
 })
     
-
-  
-
-
 function send() {
   if (chatInput.value == '') return;
   const param = {
     name : nickname.value,
     msg : chatInput.value,
   }
+  chatInput.value = '';
   socket.emit('chatting', param );
 }
 
 sendButton.addEventListener('click', send)
+
 
 socket.on('chatting', (data) => {
   const {name, msg, time} = data;
@@ -57,3 +56,6 @@ function liModel(name, msg, time) {
 
   }
 }
+
+
+  
