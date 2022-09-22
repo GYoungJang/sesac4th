@@ -3,20 +3,20 @@ import PropTypes from 'prop-types';
 
 // extends는 상속...
 class ClassComponent extends Component {
-    render() {
-        return (
-            <div>
-                {this.props.children}
-                <h2>ClassComponent - function</h2>
-                <h5>name : {this.props.name}</h5>
-                <h5>location : {this.props.location}</h5>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        {this.props.children}
+        <h2>ClassComponent - function</h2>
+        <h5>name : {this.props.name}</h5>
+        <h5>location : {this.props.location}</h5>
+      </div>
+    );
+  }
 
-    static propTypes = {
-        name: PropTypes.string
-    }
+  static propTypes = {
+    name: PropTypes.string,
+  };
 }
 // class ClassComponent1 extends Component {
 //     render() {
@@ -29,7 +29,6 @@ class ClassComponent extends Component {
 //         );
 //     }
 // }
-
 
 // function ClassComponent ({name, location, chiledren}) {
 //     console.log(props);
@@ -66,3 +65,18 @@ class ClassComponent extends Component {
 
 export default ClassComponent;
 // export default { ClassComponent, ClassComponent1 };
+
+// export default function ClassComponent() {
+//     let name = 'mike';
+
+//     function changeName() {
+//         name = name === 'mike' ? 'jane' : 'mike';
+//         document.getElementById('name').innerText = name;
+//     }
+
+//     return (
+//         <div>state</div>
+//         <h2 id='name'>{name}</h2>
+//         <button onClick={changeName}>Change</button>
+//     )
+// }
