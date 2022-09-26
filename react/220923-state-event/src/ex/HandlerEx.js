@@ -9,9 +9,9 @@ export default class Handler_ex extends Component {
   printTitle = () => {
     this.setState({
       title:
-        this.state.title === 'Hello World!' ? 'Goodbye World!' : 'Hello World!', //잘 바뀜
-      // this.state.title === 'Hello World!' && 'Goodbye World!',
-      // this.state.title === 'Hello World!' || 'Goodbye World!',
+         this.state.title === 'Hello World!' ? 'Goodbye World!' : 'Hello World!', //잘 바뀜
+      //  this.state.title == 'Hello World!' && 'Goodbye World!',
+      // this.state.title == 'Hello World!' || 'Goodbye World!',
       // this.state.title === this.state.title && 'Goodbye World!',
       // this.state.title === this.state.title || 'Goodbye World!',
     });

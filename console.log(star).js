@@ -1,14 +1,14 @@
-// for (let i = 1; i < 6; i++) console.log(' '.repeat(5 - i) + '*'.repeat(2 * i - 1));
-// for (let i = 4; i > 0; i--) console.log(' '.repeat(5 - i) + '*'.repeat(2 * i - 1));
+for (let i = 1; i < 6; i++) console.log(' '.repeat(5 - i) + '*'.repeat(2 * i - 1));
+for (let i = 4; i > 0; i--) console.log(' '.repeat(5 - i) + '*'.repeat(2 * i - 1));
 
-// let j = 7;
-// for (let i = 1; i < 10; i++) {
-//   if (i < 6) console.log(' '.repeat(5 - i) + '*'.repeat(2 * i - 1));
-//   else {
-//     console.log(' '.repeat(i - 5) + '*'.repeat(j));
-//     j -= 2;
-//   }
-// }
+let j = 7;
+for (let i = 1; i < 10; i++) {
+  if (i < 6) console.log(' '.repeat(5 - i) + '*'.repeat(2 * i - 1));
+  else {
+    console.log(' '.repeat(i - 5) + '*'.repeat(j));
+    j -= 2;
+  }
+}
 var e = { a: 'hi' };
 var f = e;
 console.log(e === f);
@@ -23,7 +23,8 @@ console.log(g);
 console.log(h);
 
 var a = { a: { y: 1 } };
-var b = { ...a };
+var b = { ...a};
+var c  = {...b.a.y}
 console.log(b);
 console.log(a);
 console.log(a === b);
