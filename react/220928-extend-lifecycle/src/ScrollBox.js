@@ -10,15 +10,21 @@ export default class ScrollBox extends Component {
     //     return {scroll : this.state.scroll + '\n'}
     // })
     let scroll = this.scroll.current;
-    scroll.scrollTo(0, scroll.scrollHeight);
+    // scroll.scrollTo(0, scroll.scrollHeight);
+    scroll.scrollTop = 800;
+    console.log(scroll.scrollTop);
   };
   scrollUp = () => {
     let scroll = this.scroll.current;
-    scroll.scrollTo(scroll.scrollHeight, 0);
+    // scroll.scrollTo(scroll.scrollHeight, 0);
+    scroll.scrollTop = 0;
+    console.log(scroll.scrollTop);
   };
 
   scrollUpDown = () => {
     let scroll = this.scroll.current;
+    scroll.scrollTop < 800 ? (scroll.scrollTop = 800) : (scroll.scrollTop = 0);
+    console.log(scroll.scrollTop);
   };
 
   render() {
@@ -31,9 +37,9 @@ export default class ScrollBox extends Component {
           <div className="div2"></div>
         </div>
         {/* <div id='div1'>{this.state.scroll}</div> */}
-        <button onClick={this.scrollDown}>버튼1</button>
-        <button onClick={this.scrollUp}>버튼2</button>
-        <button onClick={this.scrollUpDown}>버튼3</button>
+        <button onClick={this.scrollDown}>Down</button>
+        <button onClick={this.scrollUp}>Up</button>
+        <button onClick={this.scrollUpDown}>UpDown</button>
       </div>
     );
   }
