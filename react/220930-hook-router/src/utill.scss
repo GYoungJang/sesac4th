@@ -1,0 +1,22 @@
+$red : red;
+$orange : orange ;
+$yellow : yellow ;
+$green : green ;
+$blue : blue ;
+$indigo : indigo ;
+$purple : purple ;
+
+@mixin boxSize($size) {
+    width: 100px;
+    height: 20px * $size;
+}
+@mixin animation($name, $iteration_count ,$duration) {
+    animation-name : $name;
+    animation-iteration-count : $iteration_count;
+    animation-duration : $duration;
+}
+@mixin keyframe($animation_name) {
+    @keyframes #{$animation_name} {
+        @content;
+    }
+}

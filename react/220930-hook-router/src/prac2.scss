@@ -1,0 +1,143 @@
+@import './utill.scss';
+
+.bg {
+    width : 500px;
+    height : 500px;
+    background : indigo;
+    position: flex;
+    
+    .pinkBall {
+    width: 50px;
+    height: 50px;
+    background: pink;
+    position: absolute;
+    border-radius: 70%;
+    @include animation (roll, 2, 3s);
+    @include keyframe(roll){
+        0% {
+            top: 8px;
+            left: 8px;
+        }
+        25%{
+            top: 8px;
+            left: 108px;
+            
+        }
+        50%{
+            top: 108px;
+            left: 108px;
+            
+        }
+        75%{
+            top:108px;
+            left: 8px;
+            
+        }
+        100%{
+            top:8px;
+            left: 8px;
+        }
+    
+    };
+
+    }
+
+    .yellowBall {
+    width: 50px;
+    height: 50px;
+    background: yellow;
+    position: absolute;
+    border-radius: 70%;
+    @include animation (roll1, 2, 3s);
+    @include keyframe(roll1){
+        0% {
+            top: 8px;
+            left: 8px;
+        }
+        25%{
+            top: 8px;
+            left: 208px;
+            
+        }
+        50%{
+            top: 208px;
+            left: 208px;
+            
+        }
+        75%{
+            top: 208px;
+            left: 8px;
+            
+        }
+        100%{
+            top:8px;
+            left: 8px;
+        }
+
+    };
+    }
+
+    .greenBall {
+    width: 50px;
+    height: 50px;
+    background: green;
+    position: absolute;
+    border-radius: 70%;
+    @include animation (roll2, 2, 3s);
+    @include keyframe(roll2){
+        0% {
+            top: 8px;
+            left: 8px;
+        }
+        25%{
+            top: 8px;
+            left: 308px;
+            
+        }
+        50%{
+            top: 308px;
+            left: 308px;
+            
+        }
+        75%{
+            top:308px;
+            left: 8px;
+            
+        }
+        100%{
+            top:8px;
+            left: 8px;
+        }
+    };
+    }
+}
+// animation-name: roll;
+// animation-iteration-count: 2;
+// animation-duration: 3s;
+
+
+// @keyframes roll{
+//     0% {
+//         top: 8px;
+//         left: 8px;
+//     }
+//     25%{
+//         top: 8px;
+//         left: 108px;
+        
+//     }
+//     50%{
+//         top: 108px;
+//         left: 108px;
+        
+//     }
+//     75%{
+//         top:108px;
+//         left: 8px;
+        
+//     }
+//     100%{
+//         top:8px;
+//         left: 8px;
+//     }
+// }
