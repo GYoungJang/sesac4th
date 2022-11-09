@@ -1,4 +1,4 @@
-package java_first_project;
+package first.src;
 
 import java.util.Scanner;
 import java.util.Arrays;
@@ -19,9 +19,11 @@ public class Main {
 	}
 	
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+	// public static void main(String[] args) {
+	// 	// TODO Auto-generated method stub
+	// 	Secondjava test = new Secondjava(5);
+	// 	System.out.println(test.num);
+	// 	test.testMethod();
 //		System.out.println("Hello");
 //		
 //		boolean logic = true;
@@ -236,7 +238,7 @@ public class Main {
 //		arrayList1.remove(2);
 //		arrayList1.clear();
 //		System.out.println("5개의 정수를 입력하세요.");
-		Scanner input = new Scanner(System.in);
+		// Scanner input = new Scanner(System.in);
 //		int a = input.nextInt();
 //		int b = input.nextInt();
 //		int c = input.nextInt();
@@ -247,19 +249,19 @@ public class Main {
 		
 		
 		
-		ArrayList<String> stringList = new ArrayList<>();
-		while(true) {
-			System.out.println("문자를 입력해주세요.");
-			String str = input.nextLine();
-			if (str.equals("exit")) {
-				for (String s : stringList) {
-					System.out.println(s);
-				}
-				return;
-			}
-			stringList.add(str);
-		}
+		// ArrayList<String> stringList = new ArrayList<>();
+		// while(true) {
+		// 	System.out.println("문자를 입력해주세요.");
+		// 	String str = input.nextLine();
+		// 	if (str.equals("exit")) {
+		// 		for (String s : stringList) {
+		// 			System.out.println(s);
+		// 		}
+		// 		return;
+		// 	}
+		// 	stringList.add(str);
+		// }
 		
 	}
 
-}
+// }
